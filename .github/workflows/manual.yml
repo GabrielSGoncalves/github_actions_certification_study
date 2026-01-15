@@ -1,7 +1,7 @@
 name: Manual trigger 
 
 on:
-  workflow_dispatch
+  workflow_dispatch:
     inputs:
       name:
         type: string
@@ -11,8 +11,9 @@ on:
         type: string
 
 jobs:
-    greet:
-      runs-on: ubunte-latest
-    steps:
-      - name: Display Greeting
-        run: echo "${{ inputs.greeting}}, ${{ inputs.name}}"
+  greet:
+    runs-on: ubuntu-latest
+  steps:
+    - name: Display Greeting
+      run: |
+        echo "${{ inputs.greeting}}, ${{ inputs.name}}"
