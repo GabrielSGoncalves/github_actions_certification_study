@@ -1,0 +1,18 @@
+name: Manual trigger 
+
+on:
+  workflow_dispatch
+    inputs:
+      name:
+        type: string
+      greeting:
+        type: string
+      data:
+        type: string
+
+jobs:
+    greet:
+      runs-on: ubunte-latest
+    steps:
+      - name: Display Greeting
+        run: echo "${{ inputs.greeting}}, ${{ inputs.name}}"
